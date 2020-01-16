@@ -10,8 +10,7 @@ from pyspark.mllib.clustering import KMeans
 def parseVector(line):
     return np.array([float(x) for x in line.split(',')])
 
-
-if __name__ == "__main__":
+def main():
     if len(sys.argv) != 3:
         print("Usage: kmeans <file> <k>", file=sys.stderr)
         exit(-1)
@@ -23,3 +22,7 @@ if __name__ == "__main__":
     print("Final centers: " + str(model.clusterCenters))
     print("Total Cost: " + str(model.computeCost(data)))
     sc.stop()
+
+
+if __name__ == "__main__":
+    main()
