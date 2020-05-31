@@ -8,8 +8,7 @@ from pyspark.mllib.clustering import KMeans
 def parseVector(line):
     return np.array([float(x) for x in line.split(',')])
 
-
-if __name__ == "__main__":
+def main():
     if len(sys.argv) != 3:
         print("Usage: kmeans <file> <k>", file=sys.stderr)
         exit(-1)
